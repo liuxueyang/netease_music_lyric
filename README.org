@@ -2,20 +2,20 @@
 根据歌曲名字下载网易云音乐歌词，生成`.lrc`文件，给 [[https://software.opensuse.org/package/osdlyrics][osdlyrics]] 这个软件
 使用。
 
-1. 下载目录：~/.lyrics
+** 下载目录：~/.lyrics
 
 #+BEGIN_SRC bash
 mkdir ~/.lyrics
 #+END_SRC
 
-2. 安装依赖
+** 安装依赖
 
 #+BEGIN_SRC bash
 sudo cpan install JSON::Parse
 sudo cpan install File::HomeDir
 #+END_SRC
 
-3. 运行方法
+** 运行方法
 
 #+BEGIN_SRC bash
 git clone https://github.com/liuxueyang/netease_music_lyric ~/Desktop/netease_music_lyric
@@ -27,7 +27,9 @@ perl -SC ./getLyric.pl
 
 [[img/search.png]]
 
-4. 在osdlyric的设置里面`assign lyric...`就可以了。同一首歌最多有三个文件：
+** 应用歌词
+在osdlyric的设置里面`assign lyric...`就可以了。同一首歌最多有三个文件：
+
    1) 歌曲名字-by-演唱者：歌词原文和翻译
    2) 歌曲名字-another-by-演唱者：只有歌词翻译
    3) 歌曲名字-ori-by-演唱者：只有歌词原文
