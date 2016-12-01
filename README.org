@@ -27,6 +27,17 @@ perl -SC ./getLyric.pl
 
 [[img/search.png]]
 
+如果想对一个目录下的所有音乐下载歌词到某目录，假设音乐目录是：
+`/home/username/Music`，保存歌词的目录是：`/home/username/.lyrics`，那
+么可以这样：(注意两个路径是绝对路径)
+
+#+BEGIN_SRC bash
+perl -SC ./getLyric.pl /home/username/Music /home/username/.lyrics
+#+END_SRC
+
+如果脚本输出日志里面包含类似于：`wide character in print at ...`之类的
+错误，可以不用管。
+
 ** 应用歌词
 在osdlyric的设置里面`assign lyric...`就可以了。同一首歌最多有三个文件：
 
