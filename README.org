@@ -13,7 +13,12 @@ mkdir ~/.lyrics
 #+BEGIN_SRC bash
 sudo cpan install JSON::Parse
 sudo cpan install File::HomeDir
+sudo cpan install LWP::UserAgent
 #+END_SRC
+
+About how to configure cpan mirror: [Find CPAN mirrors and configure the local CPAN mirror list](http://perltricks.com/article/44/2013/10/20/Find-CPAN-mirrors-and-configure-the-local-CPAN-mirror-list/)
+
+CPAN mirror in China: [Mirror List](http://mirrors.cpan.org/)
 
 ** 运行方法
 
