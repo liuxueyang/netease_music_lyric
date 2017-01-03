@@ -16,9 +16,9 @@ sudo cpan install File::HomeDir
 sudo cpan install LWP::UserAgent
 #+END_SRC
 
-About how to configure cpan mirror: [Find CPAN mirrors and configure the local CPAN mirror list](http://perltricks.com/article/44/2013/10/20/Find-CPAN-mirrors-and-configure-the-local-CPAN-mirror-list/)
+About how to configure cpan mirror: [[http://perltricks.com/article/44/2013/10/20/Find-CPAN-mirrors-and-configure-the-local-CPAN-mirror-list/][Find CPAN mirrors and configure the local CPAN mirror list]]
 
-CPAN mirror in China: [Mirror List](http://mirrors.cpan.org/)
+CPAN mirror in China: [[http://mirrors.cpan.org/][Mirror List]]
 
 ** 运行方法
 
