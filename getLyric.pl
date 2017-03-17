@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+# 2016/12/29 10:14:03
+
 use strict;
 use warnings;
 use LWP::UserAgent;
@@ -197,12 +199,27 @@ sub write_lyric_file {
 
     if ($lyric_content && $another_lyric_content) {
 	@head = (shift @lyric1, shift @lyric2);
-	@lyric = @lyric1;
-	push @lyric, @lyric2;
-	@lyric = sort { $a cmp $b } @lyric;
-	unshift @lyric, @head;
+	# @lyric = @lyric2;
+	# push @lyric, @lyric1;
 
-	my @del_indices = reverse(grep { $lyric[$_] =~ /^ *$/ } 
+	# should not just sort!!
+	# @lyric1 is original lyric
+	# @lyric2 is the translated version
+	# lyric2 should better appear before lyric1
+
+	my %lyric1_hsh;
+	for (@lyric1) { $lyric1_hsh{$1} = $_ if (/\[(.*)\]/); }
+	my %lyric2_hsh;
+	for (@lyric2) { $lyric2_hsh{$1} = $_ if (/\[(.*)\]/); }
+	
+	# @lyric = sort { $a cmp $b } @lyric;
+	unshift @lyric, @head;
+	for (sort keys %lyric2_hsh) {
+	    push @lyric, $lyric2_hsh{$_};
+	    push @lyric, $lyric1_hsh{$_};
+	}
+	
+	my @del_indices = reverse(grep { $lyric[$_] =~ /^ *$/ }
 				  0..$#lyric);
 	for my $i (@del_indices) { splice @lyric, $i, 1; }
 	
